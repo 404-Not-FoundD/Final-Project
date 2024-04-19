@@ -4,11 +4,11 @@
 Brief description of the project and its purpose.
 
 ## Team Members
--劉靖媛 412410003(@
--陳湘昀 412410013
--莊昀潔 412410020
--黃煜庭 412410051
--余沛穎 412410073
+- 劉靖媛 412410003(@jyliew1912): 
+- 陳湘昀 412410013(@sony0505):
+- 莊昀潔 412410020(@Jayechuang):
+- 黃煜庭 412410051(@ccuhyt):
+- 余沛穎 412410073(@YuPatty):
 
 ## Project Description
 Provide a more detailed description of the project, its goals, and any relevant information.
