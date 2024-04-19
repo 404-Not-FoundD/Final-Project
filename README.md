@@ -1,15 +1,18 @@
-# Final-Project
-### Project Title
-#### Start with the name of your project at the top of the README to give readers an immediate understanding of what the project is about.
+# Project Name
 
-### Description
-#### Provide a brief overview of the project, including its purpose, features, and any unique selling points.
+## Overview
+Brief description of the project and its purpose.
 
-### Installation Instructions
-#### Detail the steps required to install and set up the project. Include any dependencies or prerequisites needed.
+## Team Members
+- XXX (@johndoe): Project Manager, Backend Developer
+- Jane Smith (@janesmith): Frontend Developer, UI/UX Designer
+- Alex Johnson (@alexj): Database Administrator, Tester
+
+## Project Description
+Provide a more detailed description of the project, its goals, and any relevant information.
 
 ### Usage
-#### Explain how to use the project, including any command-line options, configuration settings, or usage examples. Provide code snippets if necessary.
+Explain how to use the project, including any command-line options, configuration settings, or usage examples. Provide code snippets if necessary.
 
 ### Contributing
 #### If you're open to contributions from other developers, outline how they can contribute to the project. This could include guidelines for reporting bugs, submitting feature requests, or making code contributions.
