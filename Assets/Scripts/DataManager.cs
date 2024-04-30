@@ -13,6 +13,10 @@ public class DataManager : MonoBehaviour
     public int score;
     public int hiScore;
 
+    private bool gameOver;
+    public int gameOverScore;
+    private float accTime = 0f;
+
     public Text scoreText;
     public GameObject hpBar;
 
@@ -45,13 +49,20 @@ public class DataManager : MonoBehaviour
     {
         if(hp == 0)
         {
-            hiScore = GetHiScore();
+            gameOver = true;
+            gameOverScore = score;
             GameManager.Instance.GameOver();
         }
+        if(!gameOver) // wont affect(will dlt) when score is not keep by using time
+        {
+            TryTime();
+            UpdateScoreText();
+        }   
     }
 
     public void NewGame()
     {
+        gameOver = false;
         if(SceneManager.GetActiveScene().name != "Level1")
         {
             UpdateDataFromStatic();
@@ -60,6 +71,12 @@ public class DataManager : MonoBehaviour
         {
             hp = maxHp;
             UpdateHpBar();
+        }
+
+        if(gameOverScore > 0)
+        {
+            score = gameOverScore;
+            gameOverScore = 0;
         }
     }
 
@@ -115,5 +132,18 @@ public class DataManager : MonoBehaviour
             return score;
         }
         return hiScore;
+    }
+
+    void TryTime()
+    {
+        accTime += Time.deltaTime; // Accumulate delta time
+        
+        // If accumulated time is at least 1 second, increase the score
+        if (accTime >= 1.0f)
+        {
+            int increase = (int)accTime; // Convert accumulated time to an integer
+            score += increase; // Add to the score
+            accTime -= increase; // Reduce accumulated time by the integer amount
+        }
     }
 }

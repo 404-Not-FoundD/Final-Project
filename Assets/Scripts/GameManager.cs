@@ -40,11 +40,6 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        if(player == null)
-        {
-            Debug.LogError("Player object not found!");
-            return;
-        }
         gameSpeed = 5f;
 
         player.gameObject.SetActive(true);
@@ -54,12 +49,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         gameSpeed += gameSpeedIncrease * Time.deltaTime;
-    }
-
-
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 
     public void GameOver()
