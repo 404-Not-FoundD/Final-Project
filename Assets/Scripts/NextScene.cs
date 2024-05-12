@@ -21,6 +21,9 @@ public class nextScene : MonoBehaviour
             int hp = DataManager.InstanceData.GetHp();
             StaticData.lifeToKeep = hp.ToString();
 
+            int time = DataManager.InstanceData.GetTime();
+            StaticData.timeToKeep = time.ToString();
+
             SceneManager.LoadScene(scenename);
         }
     }

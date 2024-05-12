@@ -12,12 +12,13 @@ public class DataManager : MonoBehaviour
     public int hp;
     public int score;
     public int hiScore;
+    public float time = 0f;
 
     private bool gameOver;
     public int gameOverScore;
-    private float accTime = 0f;
 
     public Text scoreText;
+    public Text timeText;
     public GameObject hpBar;
 
     void Awake()
@@ -53,10 +54,10 @@ public class DataManager : MonoBehaviour
             gameOverScore = score;
             GameManager.Instance.GameOver();
         }
-        if(!gameOver) // wont affect(will dlt) when score is not keep by using time
+        if(!gameOver)
         {
-            TryTime();
-            UpdateScoreText();
+            time += Time.deltaTime;
+            UpdateTimeText();
         }   
     }
 
@@ -67,26 +68,31 @@ public class DataManager : MonoBehaviour
         {
             UpdateDataFromStatic();
         } 
-        else
+        else // first level
         {
+            score = 0;
             hp = maxHp;
-            UpdateHpBar();
+            time = 0f;
         }
 
+        UpdateScoreText();
+        UpdateHpBar();
+        UpdateTimeText();
+    }
+
+    void UpdateDataFromStatic()
+    {
         if(gameOverScore > 0)
         {
             score = gameOverScore;
             gameOverScore = 0;
         }
-    }
-
-    void UpdateDataFromStatic()
-    {
-        score = int.Parse(StaticData.scoreToKeep);
-        UpdateScoreText();
-
+        else
+        {
+            score = int.Parse(StaticData.scoreToKeep);
+        }
         hp = int.Parse(StaticData.lifeToKeep);
-        UpdateHpBar();
+        time = int.Parse(StaticData.timeToKeep);   
     }
 
     public void AddScore(int scoreToAdd)
@@ -102,9 +108,14 @@ public class DataManager : MonoBehaviour
         UpdateHpBar();
     }
 
+    void UpdateTimeText()
+    {
+        timeText.text = Mathf.FloorToInt(time).ToString("D3");
+    }
+
     void UpdateScoreText()
     {
-        scoreText.text = score.ToString("D3");
+        scoreText.text = score.ToString("D2");
     }
 
     void UpdateHpBar()
@@ -125,25 +136,18 @@ public class DataManager : MonoBehaviour
         return score;
     }
 
+    public int GetTime()
+    {
+        return Mathf.FloorToInt(time);
+    }
+
+//////////////////////// best score can get only end game!!!!!!!!!!!!!!!!!!!!
     public int GetHiScore()
     {
-        if(score > hiScore)
+        if(score < hiScore)
         {
             return score;
         }
         return hiScore;
-    }
-
-    void TryTime()
-    {
-        accTime += Time.deltaTime; // Accumulate delta time
-        
-        // If accumulated time is at least 1 second, increase the score
-        if (accTime >= 1.0f)
-        {
-            int increase = (int)accTime; // Convert accumulated time to an integer
-            score += increase; // Add to the score
-            accTime -= increase; // Reduce accumulated time by the integer amount
-        }
     }
 }

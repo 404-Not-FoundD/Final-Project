@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Next Level
+  - Invincible
+  - SlowObstacle
+  - Tool
   - Obstacle
-  - Coin
-  - aaa
   layers:
   - Default
   - TransparentFX

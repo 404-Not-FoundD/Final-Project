@@ -13,6 +13,7 @@ public class MainSceneGameManager : MonoBehaviour
     
     public void Start()
     {
+        //////////////////////////////////// high score do when level 5!!!!!!!!!!!!!!
         hiScore = int.Parse(StaticData.hiScoreToKeep);
         hiScoreText.text = hiScore.ToString("D3");
     }

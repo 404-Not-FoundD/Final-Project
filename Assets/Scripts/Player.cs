@@ -1,24 +1,24 @@
-using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private float invincibleSpeedMultiplier = 2f; // 无敌状态下的移动速度加倍系数
-    [SerializeField] private float invincibleModeDuration = 5f;
+    public float gravity = 9.81f * 2f;
+    public float jumpForce = 8f;
+
+    public float invincibleSpeedMultiplier = 2f;
+    public float decreaseSpeedMultiplier = 0.5f;
 
     private CharacterController character;
     private Vector3 moveDirection = Vector3.zero;
-    private bool isInvincible = false;
-    private Coroutine invincibleCoroutine = null;
-    public GameObject invincibleModeText;
-
-    public float gravity = 9.81f * 2f;
-    public float jumpForce = 8f;
+    private InvincibilityMode invincibilityMode;
+    private SlowMode slowMode;
 
     void Start()
     {
         character = GetComponent<CharacterController>();
+        invincibilityMode = GetComponent<InvincibilityMode>();
+        slowMode = GetComponent<SlowMode>();
     }
 
     void Update()
@@ -46,9 +46,13 @@ public class Player : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if(isInvincible) // 如果处于无敌状态，加速移动
+        if(invincibilityMode.IsInvincible) // 如果处于无敌状态，加速移动
         {
             moveDirection.x *= invincibleSpeedMultiplier;
+        }
+        else if(slowMode.IsSlow)
+        {
+            moveDirection.x *=decreaseSpeedMultiplier;
         }
 
         character.Move(moveDirection * Time.deltaTime);
@@ -64,49 +68,25 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(isInvincible && other.CompareTag("Obstacle") || other.CompareTag("Monster"))
+        if(other.CompareTag("Invincible")) 
         {
-            return;
-        }
-        else if(other.CompareTag("aaa")) 
-        {
-            SetInvincible(true); // 將玩家設置為無敵模式
+            invincibilityMode.SetInvincible(true);
             DataManager.InstanceData.AddScore(10);
-            invincibleModeText.SetActive(true);
         }
-        else if(!isInvincible) 
+        else if(!invincibilityMode.IsInvincible) 
         {
-            if(other.CompareTag("Obstacle") || other.CompareTag("Monster"))
+            if(other.CompareTag("Monster"))
             {
                 DataManager.InstanceData.ModifyHp(-1);
             }
-            else if(other.CompareTag("Coin"))
+            else if(other.CompareTag("Tool"))
             {
                 DataManager.InstanceData.ModifyHp(1);
             }
+            else if(other.CompareTag("SlowObstacle"))
+            {
+                slowMode.SetSlow(true);
+            }
         }
-    }
-
-    void SetInvincible(bool invincible)
-    {
-        isInvincible = invincible;
-
-        if(invincibleCoroutine != null) // 已有一个无敌计时器在运行
-        {
-            StopCoroutine(invincibleCoroutine);
-        }
-
-        if(invincible)
-        {
-            invincibleCoroutine = StartCoroutine(InvincibleDurationCoroutine()); // 开始无敌计时器
-        }
-    }
-
-    private IEnumerator InvincibleDurationCoroutine()
-    {
-        yield return new WaitForSeconds(invincibleModeDuration); // 等待无敌模式持续时间结束
-        isInvincible = false; // 结束无敌模式
-        invincibleCoroutine = null; // 重置协程
-        invincibleModeText.SetActive(false);
     }
 }

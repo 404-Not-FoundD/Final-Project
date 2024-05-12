@@ -2,37 +2,54 @@ using UnityEngine;
 
 public class AnimatedSprite : MonoBehaviour
 {
-    public Sprite[] sprites;
+    public Sprite[] normalSprites;
+    public Sprite[] invincibleSprites;
+    private Sprite[] currSprites;
+
     private SpriteRenderer spriteRenderer;
+    private InvincibilityMode invincibilityMode;
+
     private int frame;
 
-    private void Awake()
+    void Awake()
     {
+        currSprites = normalSprites;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
+        invincibilityMode = GetComponent<InvincibilityMode>();
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         Invoke(nameof(Animate), 0f);
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
         CancelInvoke();
     }
 
-    private void Animate()
+    void Animate()
     {
+        if(invincibilityMode.IsInvincible)
+        {
+            currSprites = invincibleSprites;
+        }
+        else
+        {
+            currSprites = normalSprites;
+        }
+        
         frame++;
 
-        if(frame >= sprites.Length) 
+        if(frame >= currSprites.Length) 
         {
             frame = 0;
         }
 
-        if(frame >= 0 && frame < sprites.Length)
+        if(frame >= 0 && frame < currSprites.Length)
         {
-            spriteRenderer.sprite = sprites[frame];
+            spriteRenderer.sprite = currSprites[frame];
         }
 
         Invoke(nameof(Animate), 1f / GameManager.Instance.gameSpeed);
