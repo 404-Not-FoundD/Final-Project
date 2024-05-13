@@ -8,7 +8,8 @@ TagManager:
   - Invincible
   - SlowObstacle
   - Tool
-  - Obstacle
+  - GuaiGuai
+  - Monster
   layers:
   - Default
   - TransparentFX

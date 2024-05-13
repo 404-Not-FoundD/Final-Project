@@ -1,15 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f;
+    public float moveSpeed = 4f;
     public float gravity = 9.81f * 2f;
     public float jumpForce = 8f;
 
     public float invincibleSpeedMultiplier = 2f;
     public float decreaseSpeedMultiplier = 0.5f;
 
-    private CharacterController character;
+    private bool prestate =true;//0 L 1 R
+
+    private CharacterController character; // pending to change *************
     private Vector3 moveDirection = Vector3.zero;
     private InvincibilityMode invincibilityMode;
     private SlowMode slowMode;
@@ -30,23 +33,30 @@ public class Player : MonoBehaviour
     void HandleMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        if(horizontalInput < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
 
+        // facing of the player (L / R)
+        if(horizontalInput < 0 && prestate)
+        {
+            prestate = false;
+        }
+        else if(horizontalInput > 0 && !prestate)
+        {
+            prestate = true;
+        }
+        if(!prestate) transform.localScale = new Vector3(-1, 1, 1);
+        else transform.localScale = new Vector3(1, 1, 1);
+
+        // x-direction movement
         moveDirection.x = horizontalInput * moveSpeed;
 
+        // player to be grounded
         if(!character.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if(invincibilityMode.IsInvincible) // 如果处于无敌状态，加速移动
+        // movement speed change
+        if(invincibilityMode.IsInvincible)
         {
             moveDirection.x *= invincibleSpeedMultiplier;
         }
@@ -68,25 +78,30 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Invincible")) 
+        if(!invincibilityMode.IsInvincible)
         {
-            invincibilityMode.SetInvincible(true);
-            DataManager.InstanceData.AddScore(10);
-        }
-        else if(!invincibilityMode.IsInvincible) 
-        {
-            if(other.CompareTag("Monster"))
+            if(other.CompareTag("Invincible")) 
+            {
+                invincibilityMode.SetInvincible(true);
+                DataManager.InstanceData.AddScore(10);
+            }
+            else if(other.CompareTag("Monster")) // Monster, life-1
             {
                 DataManager.InstanceData.ModifyHp(-1);
             }
-            else if(other.CompareTag("Tool"))
+            else if(other.CompareTag("Tool")) // Tool, score+1
+            {
+                DataManager.InstanceData.AddScore(1);
+            }
+            else if(other.CompareTag("GuaiGuai")) // GuaiGuai, life+1
             {
                 DataManager.InstanceData.ModifyHp(1);
             }
-            else if(other.CompareTag("SlowObstacle"))
+            else if(other.CompareTag("SlowObstacle")) // Obstacle 1: get slow mo
             {
                 slowMode.SetSlow(true);
             }
+            // Obstacle 2: Freeze 3 sec
         }
     }
 }

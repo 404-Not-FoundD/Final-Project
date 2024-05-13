@@ -11,25 +11,28 @@ public class InvincibilityMode : MonoBehaviour
 
     public void SetInvincible(bool invincible)
     {
+        // set invincible mode to be TRUE
         IsInvincible = invincible;
         invincibleModeText.SetActive(true);
 
-        if(invincibleCoroutine != null) // 已有一个无敌计时器在运行
+        // if there exists other invincible timer running
+        if(invincibleCoroutine != null)
         {
             StopCoroutine(invincibleCoroutine);
         }
 
         if(invincible)
         {
-            invincibleCoroutine = StartCoroutine(InvincibleDurationCoroutine()); // 开始无敌计时器
+            // start the invincible timer
+            invincibleCoroutine = StartCoroutine(InvincibleDurationCoroutine());
         }
     }
 
     private IEnumerator InvincibleDurationCoroutine()
     {
-        yield return new WaitForSeconds(invincibleModeDuration); // 等待无敌模式持续时间结束
-        IsInvincible = false; // 结束无敌模式
-        invincibleCoroutine = null; // 重置协程
+        yield return new WaitForSeconds(invincibleModeDuration); // wait mode to be ended
+        IsInvincible = false;
+        invincibleCoroutine = null;
         invincibleModeText.SetActive(false);
     }
 }

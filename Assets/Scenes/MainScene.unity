@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 320044320}
   - component: {fileID: 320044319}
   m_Layer: 0
-  m_Name: Gamemanager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiScore: 0
-  scenename: Level1
   hiScoreText: {fileID: 800164914}
 --- !u!4 &320044320
 Transform:

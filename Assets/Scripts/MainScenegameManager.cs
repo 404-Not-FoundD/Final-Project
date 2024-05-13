@@ -7,20 +7,20 @@ using UnityEngine.SceneManagement;
 public class MainSceneGameManager : MonoBehaviour
 {
     public int hiScore = 0;
-
-    public string scenename;
     public Text hiScoreText;
     
     public void Start()
     {
-        //////////////////////////////////// high score do when level 5!!!!!!!!!!!!!!
-        hiScore = int.Parse(StaticData.hiScoreToKeep);
+        /* *** WHAT HISCORE DO WE NEED TO KEEP? ***
+        // hiScore = int.Parse(StaticData.hiScoreToKeep);
+        */
+        
         hiScoreText.text = hiScore.ToString("D3");
     }
 
-    public void StartGame()
+    public void StartGame() // game start button
     {
-        SceneManager.LoadScene(scenename);
+        SceneManager.LoadScene("Level1");
     }
 
     public void EndGame()

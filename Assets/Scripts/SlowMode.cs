@@ -5,7 +5,6 @@ public class SlowMode : MonoBehaviour
 {
     public float slowModeDuration = 2f;
     public bool IsSlow {get; private set;}
-
     private Coroutine slowCoroutine = null;
 
     public void SetSlow(bool slowMo)
@@ -16,7 +15,6 @@ public class SlowMode : MonoBehaviour
         {
             StopCoroutine(slowCoroutine);
         }
-
         if(slowMo)
         {
             slowCoroutine = StartCoroutine(SlowDurationCoroutine());

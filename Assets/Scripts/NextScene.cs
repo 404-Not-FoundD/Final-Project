@@ -13,19 +13,21 @@ public class nextScene : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            // score +10
             DataManager.InstanceData.AddScore(10);
 
+            // get data from DataManagerScript
             int score = DataManager.InstanceData.GetScore();
-            StaticData.scoreToKeep = score.ToString();
-
             int hp = DataManager.InstanceData.GetHp();
-            StaticData.lifeToKeep = hp.ToString();
-
             int time = DataManager.InstanceData.GetTime();
+
+            // store data to StaticDataScript
+            StaticData.scoreToKeep = score.ToString();
+            StaticData.lifeToKeep = hp.ToString();
             StaticData.timeToKeep = time.ToString();
 
+            // to the next scene
             SceneManager.LoadScene(scenename);
         }
     }
-
 }

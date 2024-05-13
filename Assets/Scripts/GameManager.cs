@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         gameSpeed = 5f;
-
         player.gameObject.SetActive(true);
         gameOverUI.gameObject.SetActive(false);
     }
@@ -54,7 +53,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameSpeed = 0f;
-
         player.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(true);
     }

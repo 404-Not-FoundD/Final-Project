@@ -9,16 +9,13 @@ public class DataManager : MonoBehaviour
     public static DataManager InstanceData {get; private set;}
 
     public int maxHp = 7;
-    public int hp;
-    public int score;
-    public int hiScore;
+    public int hp, score, hiScore;
     public float time = 0f;
 
     private bool gameOver;
     public int gameOverScore;
 
-    public Text scoreText;
-    public Text timeText;
+    public Text scoreText, timeText;
     public GameObject hpBar;
 
     void Awake()
@@ -51,7 +48,6 @@ public class DataManager : MonoBehaviour
         if(hp == 0)
         {
             gameOver = true;
-            gameOverScore = score;
             GameManager.Instance.GameOver();
         }
         if(!gameOver)
@@ -66,9 +62,10 @@ public class DataManager : MonoBehaviour
         gameOver = false;
         if(SceneManager.GetActiveScene().name != "Level1")
         {
+            // Do need to check whether usable for GameOver scene *********
             UpdateDataFromStatic();
         } 
-        else // first level
+        else
         {
             score = 0;
             hp = maxHp;
@@ -82,15 +79,7 @@ public class DataManager : MonoBehaviour
 
     void UpdateDataFromStatic()
     {
-        if(gameOverScore > 0)
-        {
-            score = gameOverScore;
-            gameOverScore = 0;
-        }
-        else
-        {
-            score = int.Parse(StaticData.scoreToKeep);
-        }
+        score = int.Parse(StaticData.scoreToKeep);
         hp = int.Parse(StaticData.lifeToKeep);
         time = int.Parse(StaticData.timeToKeep);   
     }
@@ -110,6 +99,7 @@ public class DataManager : MonoBehaviour
 
     void UpdateTimeText()
     {
+        // round float to int, then to string type
         timeText.text = Mathf.FloorToInt(time).ToString("D3");
     }
 
@@ -141,7 +131,7 @@ public class DataManager : MonoBehaviour
         return Mathf.FloorToInt(time);
     }
 
-//////////////////////// best score can get only end game!!!!!!!!!!!!!!!!!!!!
+//////////////////////// best score can only get when end game (LVL5)>>>>>(pending to update!!)
     public int GetHiScore()
     {
         if(score < hiScore)
