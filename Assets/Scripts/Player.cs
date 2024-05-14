@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     private bool prestate =true;//0 L 1 R
 
-    private CharacterController character; // pending to change *************
+    private CharacterController character;
     private Vector3 moveDirection = Vector3.zero;
     private InvincibilityMode invincibilityMode;
     private SlowMode slowMode;
