@@ -1398,7 +1398,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 748520530640824893, guid: 95e9ccc17413526439a99480db3fc82a, type: 3}
       propertyPath: m_Name
-      value: GameManager (1)
+      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2246133924965894553, guid: 95e9ccc17413526439a99480db3fc82a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1440,6 +1440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7729154956621830444, guid: 95e9ccc17413526439a99480db3fc82a, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1426742169}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1495,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3548114973352367185, guid: 77bb649c0c9895b46b557f75f906776d, type: 3}
       propertyPath: m_Name
-      value: HomeScript (1)
+      value: HomeScript
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2108,9 +2112,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1411586048317735083, guid: 27da0318ed14e8545b8a68b593be3e16, type: 3}
+      propertyPath: introScreen
+      value: 
+      objectReference: {fileID: 1481828550}
     - target: {fileID: 1570924007220538019, guid: 27da0318ed14e8545b8a68b593be3e16, type: 3}
       propertyPath: m_Name
-      value: IntroScript (1)
+      value: IntroScript
       objectReference: {fileID: 0}
     - target: {fileID: 5268717427742346683, guid: 27da0318ed14e8545b8a68b593be3e16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2652,7 +2660,7 @@ PrefabInstance:
       objectReference: {fileID: 956820053}
     - target: {fileID: 5840923751706850317, guid: 777459d7168229d4fbd8e165c687c9a4, type: 3}
       propertyPath: m_Name
-      value: DataManager (1)
+      value: DataManager
       objectReference: {fileID: 0}
     - target: {fileID: 7336387356117160544, guid: 777459d7168229d4fbd8e165c687c9a4, type: 3}
       propertyPath: m_LocalPosition.x

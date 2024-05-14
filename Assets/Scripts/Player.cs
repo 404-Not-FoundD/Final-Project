@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
             else if(other.CompareTag("GuaiGuai")) // GuaiGuai, life+1
             {
                 DataManager.InstanceData.ModifyHp(1);
+                Destroy(other.gameObject);
             }
             else if(other.CompareTag("SlowObstacle")) // Obstacle 1: get slow mo
             {
