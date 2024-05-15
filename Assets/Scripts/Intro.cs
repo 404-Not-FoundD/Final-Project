@@ -7,6 +7,11 @@ public class Intro : MonoBehaviour
     private float introDuration = 5f;
     private bool introCompleted = false;
 
+    void Start()
+    {
+        introScreen.SetActive(true);
+    }
+
     void Update()
     {
         timeNow += Time.deltaTime;

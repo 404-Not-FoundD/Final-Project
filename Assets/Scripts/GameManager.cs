@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverUI;
     private Player player;
+    private GameObject[] guaiGuais;
 
     void Awake()
     {
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             DestroyImmediate(gameObject);
         }
+        
+        guaiGuais = GameObject.FindGameObjectsWithTag("GuaiGuai");
     }
 
     void OnDestroy()
@@ -41,6 +44,12 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         gameSpeed = 5f;
+
+        foreach (GameObject guaiGuai in guaiGuais)
+        {
+            guaiGuai.SetActive(true);
+        }
+
         player.gameObject.SetActive(true);
         gameOverUI.gameObject.SetActive(false);
     }

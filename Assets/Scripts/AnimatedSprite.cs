@@ -23,7 +23,7 @@ public class AnimatedSprite : MonoBehaviour
         CancelInvoke();
     }
 
-    void Animate()
+    public void Animate()
     {
         frame++;
 

@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 4f;
+    public float moveSpeed = 3f;
     public float gravity = 9.81f * 2f;
     public float jumpForce = 8f;
 
     public float invincibleSpeedMultiplier = 2f;
     public float decreaseSpeedMultiplier = 0.5f;
 
-    private bool prestate =true;//0 L 1 R
+    private bool prestate =true; //0 L 1 R
 
     private CharacterController character;
 
@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
             else if(other.CompareTag("GuaiGuai")) // GuaiGuai, life+1
             {
                 DataManager.InstanceData.ModifyHp(1);
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
             else if(other.CompareTag("SlowObstacle")) // Obstacle 1: get slow mo
             {
