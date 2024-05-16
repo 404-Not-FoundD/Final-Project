@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
     void HandleJump()
     {
-        if(character.isGrounded && Input.GetButtonDown("Jump"))
+        if(character.isGrounded && Input.GetButtonDown("Jump") || ( character.isGrounded && Input.GetKey(KeyCode.UpArrow) ) )
         {
             moveDirection.y = jumpForce;
         }
