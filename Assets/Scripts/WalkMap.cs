@@ -9,6 +9,7 @@ public class WalkMap : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
     }
+    
     private void LateUpdate()
     {
         Vector3 cameraPosition = transform.position;

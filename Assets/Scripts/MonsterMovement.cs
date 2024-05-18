@@ -2,25 +2,39 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private PlayerManager playerManager;
-
-    [SerializeField] private float distance_to_chase = 0.9f;
-    public float speed = 0.8f;
-    private float leftEdge;
-    // private float scale = 0.3f;
-
-    public float waitDuration = 7f;
-    private float timeNow;    
+    private float timeNow;
+    private float waitDuration = 7f;    
     private bool MonsterAwake;
+
+    private float distance_to_chase = 0.9f;
+    private float speed = 0.8f;
+    private float leftEdge;
+
+    public Rigidbody rb;
+    public PlayerManager playerManager;
+    public GameObject attackText;
+
+    private DurationMode durationMode;
 
     void Start()
     {
-        InitiateMonster();
+        durationMode = GetComponent<DurationMode>();
+
+        timeNow = 0f;
+        MonsterAwake = false;
+
+        // set the monster position to the left edge
+        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+        transform.position = new Vector3(leftEdge, transform.position.y, 0);
     }
 
     void FixedUpdate()
     {
+        if(GameManager.Instance.gameOver)
+        {
+            return;
+        }
+
         timeNow += Time.deltaTime;
 
         if(!MonsterAwake)
@@ -28,24 +42,13 @@ public class MonsterMovement : MonoBehaviour
             if(timeNow >= waitDuration)
             {
                 MonsterAwake = true;
+                durationMode.SetMode("DDoS", 3.0f, attackText);
             }
         }
         else
         {
             MonsterChasing();
         }
-    }
-
-    public void InitiateMonster()
-    {
-        timeNow = 0f;
-        MonsterAwake = false;
-
-        // set monster position to the left edge
-        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
-        Vector3 newPosition = transform.position;
-        newPosition.x = leftEdge;
-        transform.position = newPosition;
     }
 
     void MonsterChasing()
@@ -58,17 +61,15 @@ public class MonsterMovement : MonoBehaviour
         if(Mathf.Abs(playerPosition.x - position.x) > distance_to_chase)
         {
             //change the facing of monster
-            if(direction.x<0)
+            if(direction.x < 0)
             {
-                // transform.localScale = new Vector3(-scale, scale, scale);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else
             {
-                // transform.localScale = new Vector3(scale, scale, scale);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
-            
+             
             rb.MovePosition(Vector3.MoveTowards(position, targetPosition, speed * Time.fixedDeltaTime)); // for chasing
         }
     }

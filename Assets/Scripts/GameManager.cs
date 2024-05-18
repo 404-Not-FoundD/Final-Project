@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +8,15 @@ public class GameManager : MonoBehaviour
     public float gameSpeed {get; private set;}
     public float gameSpeedIncrease = 0.05f; 
 
-    public GameObject gameOverUI;
-    private Player player;
-    private GameObject[] guaiGuais;
+    public bool gameOver {get; private set;}
 
+    private DurationMode durationMode;
+    public GameObject gameOverUI;
+    public GameObject introScreen;
+
+    private Player player;
+    public string thisScene;
+    
     void Awake()
     {
         if(Instance == null) 
@@ -23,8 +27,6 @@ public class GameManager : MonoBehaviour
         {
             DestroyImmediate(gameObject);
         }
-        
-        guaiGuais = GameObject.FindGameObjectsWithTag("GuaiGuai");
     }
 
     void OnDestroy()
@@ -37,21 +39,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        durationMode = GetComponent<DurationMode>();
         player = FindFirstObjectByType<Player>();
-        NewGame();
+
+        durationMode.SetMode("IntroScreen", 3.0f, introScreen);
+        gameSpeed = 5f;
+        gameOver = false;
     }
 
-    public void NewGame()
+    public void RestartGame()
     {
-        gameSpeed = 5f;
-
-        foreach (GameObject guaiGuai in guaiGuais)
-        {
-            guaiGuai.SetActive(true);
-        }
-
-        player.gameObject.SetActive(true);
-        gameOverUI.gameObject.SetActive(false);
+        SceneManager.LoadScene(thisScene);
     }
 
     void Update()
@@ -61,8 +59,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameOver = true;
         gameSpeed = 0f;
-        player.gameObject.SetActive(false);
+
         gameOverUI.gameObject.SetActive(true);
+        player.gameObject.SetActive(false);
     }
 }

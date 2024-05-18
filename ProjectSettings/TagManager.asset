@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Next Level
   - Invincible
   - SlowObstacle
   - Tool
   - GuaiGuai
   - Monster
+  - NxtLevel
+  - GameOver
   layers:
   - Default
   - TransparentFX
