@@ -11,6 +11,7 @@ TagManager:
   - Monster
   - NxtLevel
   - GameOver
+  - Instructions
   layers:
   - Default
   - TransparentFX

@@ -30,6 +30,7 @@ public class DurationMode : MonoBehaviour
         modeCoroutine = StartCoroutine(ModeDurationCoroutine());
     }
 
+    /*
     private IEnumerator ModeDurationCoroutine()
     {
         yield return new WaitForSeconds(modeDuration);
@@ -42,7 +43,31 @@ public class DurationMode : MonoBehaviour
         modeString = null;
         modeCoroutine = null;
     }
+    */
 
+    private IEnumerator ModeDurationCoroutine()
+    {
+        float elapsed = 0f;
+
+        while(elapsed < modeDuration)
+        {
+            if(GameManager.Instance.gameOver)
+            {
+                break;
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+
+        if(objectText != null)
+        {
+            objectText.gameObject.SetActive(false);
+        }
+
+        modeString = null;
+        modeCoroutine = null;
+    }
     public bool IsInvincible
     {
         get {return modeString == "InvincibleMode";}

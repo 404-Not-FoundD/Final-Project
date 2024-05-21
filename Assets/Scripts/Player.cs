@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     {
         character = GetComponent<CharacterController>();
         durationMode = GetComponent<DurationMode>();
+
+        character.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
     }
 
     void Update()

@@ -7,14 +7,14 @@ public class MonsterMovement : MonoBehaviour
     private bool MonsterAwake;
 
     private float distance_to_chase = 0.9f;
-    private float speed = 0.8f;
+    private float speed = 1.5f;
     private float leftEdge;
 
-    public Rigidbody rb;
     public PlayerManager playerManager;
-    public GameObject attackText;
-
     private DurationMode durationMode;
+
+    public Rigidbody rb;
+    public GameObject attackText;
 
     void Start()
     {
@@ -22,10 +22,6 @@ public class MonsterMovement : MonoBehaviour
 
         timeNow = 0f;
         MonsterAwake = false;
-
-        // set the monster position to the left edge
-        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
-        transform.position = new Vector3(leftEdge, transform.position.y, 0);
     }
 
     void FixedUpdate()
@@ -41,8 +37,9 @@ public class MonsterMovement : MonoBehaviour
         {
             if(timeNow >= waitDuration)
             {
-                MonsterAwake = true;
+                LeftEdge();
                 durationMode.SetMode("DDoS", 3.0f, attackText);
+                MonsterAwake = true;
             }
         }
         else
@@ -56,7 +53,7 @@ public class MonsterMovement : MonoBehaviour
         var playerPosition = playerManager.Position;
         var position = transform.position;
         var direction = (playerPosition - position).normalized;
-        var targetPosition = position + new Vector3(direction.x, 0f, 0f); // Movement only on x-axis
+        var targetPosition = position + new Vector3(direction.x, 0f, 0f);
 
         if(Mathf.Abs(playerPosition.x - position.x) > distance_to_chase)
         {
@@ -72,5 +69,12 @@ public class MonsterMovement : MonoBehaviour
              
             rb.MovePosition(Vector3.MoveTowards(position, targetPosition, speed * Time.fixedDeltaTime)); // for chasing
         }
+    }
+
+    void LeftEdge()
+    {
+        // set the monster position to the left edge
+        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+        transform.position = new Vector3(leftEdge, transform.position.y, 0);
     }
 }

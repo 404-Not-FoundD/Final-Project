@@ -19,13 +19,7 @@ public class PlayerFunctions : MonoBehaviour
     {
         if(!durationMode.IsInvincible)
         {
-            // Player Modes
-            if(other.CompareTag("Invincible"))
-            {
-                durationMode.SetMode("InvincibleMode", 5.0f, invincibilityText);
-                DataManager.InstanceData.AddScore(10);
-            }
-            else if(other.CompareTag("SlowObstacle"))
+            if(other.CompareTag("SlowObstacle"))
             {
                 durationMode.SetMode("SlowMode", 2.0f, null);
             } // freeze mode
@@ -37,13 +31,14 @@ public class PlayerFunctions : MonoBehaviour
             }
             else if(other.CompareTag("GuaiGuai")) // GuaiGuai, life+1
             {
-                DataManager.InstanceData.ModifyHp(1);
-                DataManager.InstanceData.AddScore(1);
                 other.gameObject.SetActive(false);
+                DataManager.InstanceData.ModifyHp(1);
+                // DataManager.InstanceData.AddScore(1);
 
                 if(DataManager.InstanceData.GetGuaiGuai(1) == guaiGuaiCount)
                 {
                     durationMode.SetMode("InvincibleMode", 5.0f, invincibilityText);
+                    DataManager.InstanceData.AddScore(10);
                 }
             }
             else if(other.CompareTag("Tool"))
