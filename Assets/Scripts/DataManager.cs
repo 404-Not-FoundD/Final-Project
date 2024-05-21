@@ -6,12 +6,11 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager InstanceData {get; private set;}
 
-    public int hp;
-    public int score;
+    public int hp, score, guaiGuai;
     public float time;
 
     public Text scoreText, timeText;
-    public GameObject hpBar;
+    public GameObject hpBar, symbol;
 
     void Awake()
     {
@@ -35,24 +34,7 @@ public class DataManager : MonoBehaviour
 
     void Start()
     {
-        
-        // (COULD TEMPORARY NOT USING THIS CODE FOR lvl's TRIES) ********
-        if(SceneManager.GetActiveScene().name != "Level1")
-        {
-            UpdateDataFromStatic();
-        } 
-        else
-        {
-            score = 0;
-            time = 0f;
-            hp = 7;
-        }
-        /*
-        score = 0;
-        time = 0f;
-        hp = 7;
-        */
-
+        UpdateDataFromStatic();
         UpdateScoreText();
         UpdateTimeText();
         UpdateHpBar();
@@ -60,13 +42,23 @@ public class DataManager : MonoBehaviour
 
     void Update()
     {
-        if(hp == 0)
-        {
-            GameManager.Instance.GameOver();
-        }
-
         if(!GameManager.Instance.gameOver)
         {
+            if(hp == 0)
+            {
+                // manually update static data be score minus 5
+                if(StaticData.scoreToKeep == null)
+                {
+                    score = -5;
+                }
+                else
+                {
+                    score = int.Parse(StaticData.scoreToKeep) - 5;
+                }
+                StaticData.scoreToKeep = score.ToString();
+                
+                GameManager.Instance.GameOver();
+            }
             time += Time.deltaTime;
             UpdateTimeText();
         }   
@@ -74,9 +66,20 @@ public class DataManager : MonoBehaviour
 
     void UpdateDataFromStatic()
     {
-        score = int.Parse(StaticData.scoreToKeep);
-        time = int.Parse(StaticData.timeToKeep); 
-        hp = int.Parse(StaticData.lifeToKeep);  
+        guaiGuai = score = 0;
+        time = 0f;
+        hp = 7;
+
+        if(StaticData.scoreToKeep != null)
+        {
+            score = int.Parse(StaticData.scoreToKeep);
+        }
+
+        if(StaticData.timeToKeep != null)
+        {
+            time = int.Parse(StaticData.timeToKeep); 
+            hp = int.Parse(StaticData.lifeToKeep); 
+        } 
     }
 
     public void AddScore(int scoreToAdd)
@@ -94,6 +97,14 @@ public class DataManager : MonoBehaviour
 
     void UpdateScoreText()
     {
+        if(score < 0)
+        {
+            symbol.gameObject.SetActive(false);
+        }
+        else
+        {
+            symbol.gameObject.SetActive(true);
+        }
         scoreText.text = score.ToString("D2");
     }
 
@@ -123,6 +134,12 @@ public class DataManager : MonoBehaviour
     public int GetHp() 
     {
         return hp;
+    }
+
+    public int GetGuaiGuai(int count)
+    {
+        guaiGuai += count;
+        return guaiGuai;
     }
 
 //////////////////////// best score can only get when end game (LVL5)>>>>>(pending to update!!)

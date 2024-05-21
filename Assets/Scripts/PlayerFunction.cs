@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerFunctions : MonoBehaviour
 {
     public string nextscene;
+    public int guaiGuaiCount = 5;
 
     private DurationMode durationMode;
     public GameObject invincibilityText;
@@ -37,7 +38,13 @@ public class PlayerFunctions : MonoBehaviour
             else if(other.CompareTag("GuaiGuai")) // GuaiGuai, life+1
             {
                 DataManager.InstanceData.ModifyHp(1);
+                DataManager.InstanceData.AddScore(1);
                 other.gameObject.SetActive(false);
+
+                if(DataManager.InstanceData.GetGuaiGuai(1) == guaiGuaiCount)
+                {
+                    durationMode.SetMode("InvincibleMode", 5.0f, invincibilityText);
+                }
             }
             else if(other.CompareTag("Tool"))
             {

@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
 
         durationMode.SetMode("IntroScreen", 3.0f, introScreen);
         gameSpeed = 5f;
-        gameOver = false;
     }
 
     public void RestartGame()
