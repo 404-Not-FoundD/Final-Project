@@ -13,7 +13,8 @@ The current subnet is disconnected, and you need to gather clues to find the cor
 - 余沛穎 412410073(@YuPatty): player，分數，血量，部分地圖生成，額外道具，繪圖大師，報告+README
 
 ## Project Description
-玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右移動
+玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右移動  
+
 Character: Google Dinosaur  
 Lives: Starts with 7 lives  
 Monsters: Losing 1 life upon encounter  
