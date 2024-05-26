@@ -2,7 +2,8 @@
 404
 
 ## Overview
-當前宿網處於斷線狀態，需要蒐集線索找到正確的IP，通過5層關卡，以重新連接宿網
+當前宿網處於斷線狀態，需要蒐集線索找到正確的IP，通過5層關卡，以重新連接宿網  
+The current subnet is disconnected, and you need to gather clues to find the correct IP address. Pass through 5 levels to reconnect the subnet.
 
 ## Team Members
 - 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示，額外道具，整合大師
@@ -13,6 +14,11 @@
 
 ## Project Description
 玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右移動
+Character: Google Dinosaur  
+Lives: Starts with 7 lives  
+Monsters: Losing 1 life upon encounter  
+"乖乖": Gaining 1 life upon encounter  
+Movement: Can move up, down, left, and right  
 
 #### 關卡詳細資訊:
 第一層(Application Layer):  
@@ -24,7 +30,24 @@
 第四層(Link Layer):  
 找到正確的 MAC Address，有許多可能選項，需要找到提示解碼;障礙物:冰塊（暫停3秒）  
 第五層(Physical Layer):  
-時間限制內蒐集100個金幣交給宿管，遇到阿信壽司金幣增加10個，遇到離散時間增加5秒;障礙物:學分（行動減慢）  
+時間限制內蒐集100個金幣交給宿管，遇到阿信壽司金幣增加10個，遇到離散時間增加5秒;障礙物:學分（行動減慢）    
+
+#### Level Details:
+第一層 (Application Layer):  
+Objective: Avoid the bear's DDOS attacks and shake the trees to find the HTTP response status code 200.  
+Obstacles: Swamps (slow down movement)  
+第二層 (Transport Layer):  
+Objective: Find the correct person to handshake with. Choosing the wrong person resets the current level.  
+Obstacles: Coral (slow down movement)  
+第三層 (Network Layer):  
+Objective: Find the correct school IP tunnel. Choosing the wrong one reduces 1 life.  
+Obstacles: Cacti (reduce 1 life)  
+第四層 (Link Layer):  
+Objective: Find the correct MAC Address among many options, using hints to decode the right one.  
+Obstacles: Ice blocks (pause for 3 seconds)  
+第五層 (Physical Layer):  
+Objective: Collect 100 coins within the time limit and give them to the dorm supervisor. Encountering Ashin Sushi increases coins by 10, and encountering a discrete event increases the time by 5 seconds.  
+Obstacles: Credits (slow down movement)  
 
 #### 額外道具:
 1.計時器
@@ -33,8 +56,16 @@
 4.天使
 5.飛行器
 
+#### Additional Items:  
+1. **Timer**: Adds extra time to complete the current level.  
+2. **Invincibility**: Grants temporary immunity to all obstacles and enemies.  
+3. **Magnet**: Attracts nearby coins automatically for a limited time.  
+4. **Angel**: Provides correct clues to help solve puzzles or find the right paths/items.  
+5. **Flying Device**: Allows the player to fly over obstacles and enemies for a short duration.  
+
 ## Usage
-操控上下左右按鍵移動小恐龍
+操控上下左右按鍵移動小恐龍  
+Control the Google Dinosaur using the arrow keys to move up, down, left, and right.  
 
 ## References
 [無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)  
