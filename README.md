@@ -2,7 +2,7 @@
 404
 
 ## Overview
-當前宿網處於斷線狀態，需要蒐集線索找到正確的IP，通過5層關卡，以重新連接宿網。
+當前宿網處於斷線狀態，需要蒐集線索找到正確的IP，通過5層關卡，以重新連接宿網
 
 ## Team Members
 - 劉靖媛 412410003(@jyliew1912):遊戲畫面顯示，額外道具，整合大師
@@ -12,13 +12,13 @@
 - 余沛穎 412410073(@YuPatty): player，分數，血量，部分地圖生成，額外道具，繪圖大師，報告+README
 
 ## Project Description
-#### 玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右
+玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右移動
 
-#### 第一層(Application Layer):躲避熊的DDOS攻擊並搖樹找到HTTP reponse status code 200;障礙物:沼澤（行動減慢）
-#### 第二層(Transport Layer):找到正確的人和玩家握手，找錯的話重新遊戲當前關卡;障礙物:珊瑚（行動減慢）
-#### 第三層(Network Layer):找到正確學校IP通道，找錯減1條命;障礙物:仙人掌（減1命）
-#### 第四層(Link Layer):找到正確的 MAC Address，有許多可能選項，需要找到提示解碼;障礙物:冰塊（暫停3秒）
-#### 第五層(Physical Layer):時間限制內蒐集100個金幣交給宿管，遇到阿信壽司金幣增加10個，遇到離散時間增加5秒;障礙物:學分（行動減慢）
+第一層(Application Layer):躲避熊的DDOS攻擊並搖樹找到HTTP reponse status code 200;障礙物:沼澤（行動減慢）  
+第二層(Transport Layer):找到正確的人和玩家握手，找錯的話重新遊戲當前關卡;障礙物:珊瑚（行動減慢）  
+第三層(Network Layer):找到正確學校IP通道，找錯減1條命;障礙物:仙人掌（減1命）  
+第四層(Link Layer):找到正確的 MAC Address，有許多可能選項，需要找到提示解碼;障礙物:冰塊（暫停3秒）  
+第五層(Physical Layer):時間限制內蒐集100個金幣交給宿管，遇到阿信壽司金幣增加10個，遇到離散時間增加5秒;障礙物:學分（行動減慢）  
 
 #### 額外道具:
 1.計時器
@@ -31,21 +31,21 @@
 操控上下左右按鍵移動小恐龍
 
 ## References
-#### [無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)
-[Sprite Renderer](https://blog.csdn.net/BeUniqueToYou/article/details/74779608)
-[Unity - Keeping The Player Within Screen Boundaries](https://www.youtube.com/watch?v=ailbszpt_AI)
-[顯示/隱藏物件(SetActive)](https://ithelp.ithome.com.tw/articles/10266356?sc=rss.iron)
-[Unity 物件的啟用與停用](https://www.cg.com.tw/UnityCSharp/Content/SetActive.php)
-[Unity Script 常用語法教學](https://www.gameislearning.url.tw/article_content.php?getb=2&foog=9997#google_vignette)
-[Enemy](https://www.youtube.com/watch?v=jvtFUfJ6CP8)
-[Scene](https://www.youtube.com/watch?v=ge3koyyH3nc)
-[3小時製作一個遊戲 ｜ Unity 遊戲開發初學者教學](https://www.youtube.com/watch?v=nPW6tKeapsM)
-[Unity2018教程](https://www.youtube.com/watch?v=99FwnTyyDJg&list=PL_Pb2I110MfGAsoqtDs8-6kEU55wU8CnE)
-[Super Mario](https://www.youtube.com/playlist?list=PLqlFiJjSZ2x1mrMpSQgYdRm8PyWRTg6He)
-[Terminal](https://www.youtube.com/playlist?list=PLf9ofW-QospneJkI2HzX_OzTJavvZkItm)
-[How To Add An Existing Unity Project To Github](https://cadacreate.medium.com/how-to-add-existing-unity-project-to-github-916ad75160e7)
-[Dino](https://www.youtube.com/watch?v=UPvW8kYqxZk)
-[How to Transfer Data Between Scenes in Unity](https://www.youtube.com/watch?si=PHB6wadgr-KPYJZU&v=QG5i6DL7-to&feature=youtu.be)
+[無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)  
+[Sprite Renderer](https://blog.csdn.net/BeUniqueToYou/article/details/74779608)  
+[Unity - Keeping The Player Within Screen Boundaries](https://www.youtube.com/watch?v=ailbszpt_AI)  
+[顯示/隱藏物件(SetActive)](https://ithelp.ithome.com.tw/articles/10266356?sc=rss.iron)  
+[Unity 物件的啟用與停用](https://www.cg.com.tw/UnityCSharp/Content/SetActive.php)  
+[Unity Script 常用語法教學](https://www.gameislearning.url.tw/article_content.php?getb=2&foog=9997#google_vignette)  
+[Enemy](https://www.youtube.com/watch?v=jvtFUfJ6CP8)  
+[Scene](https://www.youtube.com/watch?v=ge3koyyH3nc)  
+[3小時製作一個遊戲 ｜ Unity 遊戲開發初學者教學](https://www.youtube.com/watch?v=nPW6tKeapsM)  
+[Unity2018教程](https://www.youtube.com/watch?v=99FwnTyyDJg&list=PL_Pb2I110MfGAsoqtDs8-6kEU55wU8CnE)  
+[Super Mario](https://www.youtube.com/playlist?list=PLqlFiJjSZ2x1mrMpSQgYdRm8PyWRTg6He)  
+[Terminal](https://www.youtube.com/playlist?list=PLf9ofW-QospneJkI2HzX_OzTJavvZkItm)  
+[How To Add An Existing Unity Project To Github](https://cadacreate.medium.com/how-to-add-existing-unity-project-to-github-916ad75160e7)  
+[Dino](https://www.youtube.com/watch?v=UPvW8kYqxZk)  
+[How to Transfer Data Between Scenes in Unity](https://www.youtube.com/watch?si=PHB6wadgr-KPYJZU&v=QG5i6DL7-to&feature=youtu.be)  
 
 
 
