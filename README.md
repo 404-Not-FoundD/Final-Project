@@ -9,8 +9,8 @@ The current subnet is disconnected, and you need to gather clues to find the cor
 - 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示，額外道具，整合大師
 - 陳湘昀 412410013(@sony0505): 地圖生成，部分道具，整合，debug大師
 - 莊昀潔 412410020(@Jayechuang): terminal大師，主要道具
-- 黃煜庭 412410051(@ccuhyt): monster，部分地圖生成，部分繪圖
-- 余沛穎 412410073(@YuPatty): player，分數，血量，音效，部分地圖生成，額外道具，繪圖大師，報告+README
+- 黃煜庭 412410051(@ccuhyt): monster，初始登入介面，部分地圖生成，部分繪圖
+- 余沛穎 412410073(@YuPatty): player，分數，血量，BGM+音效，部分地圖生成，額外道具，繪圖大師，報告+README
 
 ## Project Description
 玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右移動  
