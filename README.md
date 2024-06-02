@@ -22,31 +22,36 @@ Monsters: Losing 1 life upon encounter
 Movement: Can move up, down, left, and right  
 
 #### 關卡詳細資訊:
-第一層(Application Layer):  
-躲避熊的DDOS攻擊並搖樹找到HTTP reponse status code 200(需要跑完整張地圖，如果沒找到重回起點);障礙物:沼澤（行動減慢）  
-第二層(Transport Layer):  
+第一關/第五層 (Application Layer):  
+1.	躲避monster（熊）：在地圖上移動時，要躲避熊的DDOS攻擊，被碰到會扣一條生命值
+2.	障礙物：在經過沼澤地區時，行動速度會減慢
+3.	道具
+    1.樹：遇到樹時，可以搖動它使其掉落蘋果。每顆蘋果會隨機包含不同的HTTP status code
+  	2.乖乖：吃到乖乖道具可以增加一條生命值
+4.  通關條件：當得到status code是200的蘋果時，可以前往這一關的終點並通關，如果拿的不是正確的蘋果則重回起點
+第四層(Transport Layer):  
 找到正確的人和玩家握手，找錯的話重新遊戲當前關卡;障礙物:珊瑚（行動減慢）  
 第三層(Network Layer):  
 找到正確學校IP通道，找錯減1條命;障礙物:仙人掌（減1命）  
-第四層(Link Layer):  
+第二層(Link Layer):  
 找到正確的 MAC Address，有許多可能選項，需要找到提示解碼;障礙物:冰塊（暫停3秒）  
-第五層(Physical Layer):  
+第一層(Physical Layer):  
 時間限制內蒐集100個金幣交給宿管，遇到阿信壽司金幣增加10個，遇到離散時間增加5秒;障礙物:學分（行動減慢）    
 
 #### Level Details:
-第一層 (Application Layer):  
+第五層 (Application Layer):  
 Objective: Avoid the bear's DDOS attacks and shake the trees to find the HTTP response status code 200.  
 Obstacles: Swamps (slow down movement)  
-第二層 (Transport Layer):  
+第四層 (Transport Layer):  
 Objective: Find the correct person to handshake with. Choosing the wrong person resets the current level.  
 Obstacles: Coral (slow down movement)  
 第三層 (Network Layer):  
 Objective: Find the correct school IP tunnel. Choosing the wrong one reduces 1 life.  
 Obstacles: Cacti (reduce 1 life)  
-第四層 (Link Layer):  
+第二層 (Link Layer):  
 Objective: Find the correct MAC Address among many options, using hints to decode the right one.  
 Obstacles: Ice blocks (pause for 3 seconds)  
-第五層 (Physical Layer):  
+第一層 (Physical Layer):  
 Objective: Collect 100 coins within the time limit and give them to the dorm supervisor. Encountering Ashin Sushi increases coins by 10, and encountering a discrete event increases the time by 5 seconds.  
 Obstacles: Credits (slow down movement)  
 
