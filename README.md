@@ -3,7 +3,8 @@
 
 ## Overview
 當前宿網處於斷線狀態，需要蒐集線索找到正確的IP，通過5層關卡，以重新連接宿網  
-The current subnet is disconnected, and you need to gather clues to find the correct IP address. Pass through 5 levels to reconnect the subnet.
+Our game draws inspiration from "Mario" and "Google Dinosaur." Using Unity, we feature the Google Dinosaur as the main character.
+The game begins with a Dormnet network disconnection. The player must collect clues to find the correct IP address and gather objects for each layer of the TCP/IP model, progressing through 5 levels to reconnect the network.  
 
 ## Team Members
 - 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示，額外道具，整合大師
@@ -19,7 +20,7 @@ Character: Google Dinosaur
 Lives: Starts with 7 lives  
 Monsters: Losing 1 life upon encounter  
 "乖乖": Gaining 1 life upon encounter  
-Movement: Can move up, down, left, and right  
+Movement: Can move up, down, left, and right(controlled by the arrow keys)  
 
 #### 關卡詳細資訊:
 **第一關/第五層 (Application Layer)**
