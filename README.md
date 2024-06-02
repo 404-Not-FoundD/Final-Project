@@ -64,7 +64,7 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
    －**全家**：金幣減少 50 個，加5秒  
    －**離散數學**：玩家遇到離散數學時間增加 10 秒    
    －**乖乖**：吃到乖乖道具可以增加一條生命值    
-5. **通關條件**：在時間限制內蒐集 1000 個金幣交給宿管    
+4. **通關條件**：在時間限制內蒐集 1000 個金幣交給宿管    
     
 
 #### Level Details:  
@@ -114,7 +114,7 @@ school IP path.
   - **Coin:** Increases the player's coins by 15.  
   －**Discrete Mathematics:** Adds 10 seconds to the timer.    
   －**Guai Guai:** Consuming this item increases the player's life by one.    
-5. **Goal:**　Collect 1000 coins within the time limit and hand them to the dorm manager.    
+4. **Goal:**　Collect 1000 coins within the time limit and hand them to the dorm manager.    
 
 
 #### 額外道具:
