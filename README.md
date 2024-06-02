@@ -126,7 +126,8 @@ school IP path.
 
 #### Additional Items:  
 1. **Timer**: Adds extra time to complete the current level.  
-2. **Invincibility**: Grants temporary immunity to all obstacles and enemies.  
+2. **Invincibility**: Grants temporary immunity to all obstacles and enemies when eating more than 3 乖乖.
+  
 3. **Magnet**: Attracts nearby coins automatically for a limited time.  
 4. **Angel**: Provides correct clues to help solve puzzles or find the right paths.  
 5. **Flying Device**: Allows the player to fly over obstacles and enemies for a short duration.  
