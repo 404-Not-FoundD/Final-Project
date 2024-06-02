@@ -22,64 +22,95 @@ Monsters: Losing 1 life upon encounter
 Movement: Can move up, down, left, and right  
 
 #### 關卡詳細資訊:
-第一關/第五層 (Application Layer):  
-1.	躲避monster（熊）：在地圖上移動時玩家要躲避熊的DDOS攻擊，被碰到會扣一條生命值
-2.	障礙物：經過沼澤地區玩家行動速度會減慢
-3.	道具
-    1.樹：玩家搖動樹時會掉落蘋果，每顆蘋果隨機包含不同的HTTP status code
-  	2.乖乖：吃到乖乖道具可以增加一條生命值
-4.  通關條件：當玩家取得status code為200的蘋果時，可以前往這一關的終點並通關，如果拿的不是正確的蘋果則重回起點
+**第一關/第五層 (Application Layer)**
+1.	**躲避monster（熊）:**：在地圖上移動時玩家要躲避熊的DDOS攻擊，被碰到會扣一條生命值
+3.	**障礙物**：經過沼澤地區玩家行動速度會減慢
+4.	**道具**
+    －**樹**：玩家搖動樹時會掉落蘋果，每顆蘋果隨機包含不同的HTTP status code
+  	－**乖乖**：吃到乖乖道具可以增加一條生命值
+5.  **通關條件**：當玩家取得status code為200的蘋果時，可以前往這一關的終點並通關，如果拿的不是正確的蘋果則重回起點
 
-第二關/第四層 (Transport Layer):  
-1.	躲避monster（鯊魚）：在地圖上移動時玩家要躲避鯊魚的攻擊，被碰到會扣一條生命值
-2.	障礙物：碰到珊瑚會使玩家行動速度減慢
-3.	道具
-   1.貝殼：玩家碰到貝殼時會掉落線索。每個貝殼掉落的線索隨機生成，線索都指向正確的乖乖人物的特徵
-   2.乖乖：吃到乖乖道具可以增加一條生命值
-4.  通關條件：找到正確的乖乖人物和玩家握手，找錯的話重新開始當前關卡
+**第二關/第四層 (Transport Layer)**
+1.	**躲避monster（鯊魚）**:在地圖上移動時玩家要躲避鯊魚的攻擊，被碰到會扣一條生命值
+2.	**障礙物**：碰到珊瑚會使玩家行動速度減慢
+3.	**道具**
+   －**貝殼**：玩家碰到貝殼時會掉落線索。每個貝殼掉落的線索隨機生成，線索都指向正確的乖乖人物的特徵
+   －**乖乖**：吃到乖乖道具可以增加一條生命值
+4.  **通關條件**：找到正確的乖乖人物和玩家握手，找錯的話重新開始當前關卡
 
-第三關/第三層 (Network Layer):  
-1.	躲避monster（蠍子）：在地圖上移動時玩家要躲避蠍子，被碰到會扣一條生命值。
-2.	障礙物：碰到仙人掌扣除玩家一條生命值。
-3.	道具
-   1.椰子：玩家碰到椰子樹時會掉落椰子，椰子包含隨機生成的線索，線索指引玩家找到正確的學校 IP 通道
-   2.乖乖：吃到乖乖道具可以增加一條生命值
-4. 通關條件：找到正確的學校 IP 通道，找錯扣除一條生命值
+**第三關/第三層 (Network Layer)**
+1.	**躲避monster（蠍子）**：在地圖上移動時玩家要躲避蠍子，被碰到會扣一條生命值。
+2.	**障礙物**：碰到仙人掌扣除玩家一條生命值。
+3.	**道具**
+   －**椰子**：玩家碰到椰子樹時會掉落椰子，椰子包含隨機生成的線索，線索指引玩家找到正確的學校 IP 通道
+   －**乖乖**：吃到乖乖道具可以增加一條生命值
+4. **通關條件**：找到正確的學校 IP 通道，找錯扣除一條生命值
 
-第四關/第二層 (Link Layer):  
-1.	躲避monster（北極熊）：在地圖上移動時玩家要躲避北極熊，被碰到則扣一條生命值。
-2.	障礙物：碰到冰塊玩家暫停移動3秒
-3.	道具
-   1.因紐特人：提供玩家關於MAC地址的線索
-   2.乖乖：吃到乖乖道具可以增加一條生命值
-4. 通關條件：找到正確的 MAC 地址，有許多選項，需要找到提示解碼
+**第四關/第二層 (Link Layer)**
+1.	**躲避monster（北極熊）**：在地圖上移動時玩家要躲避北極熊，被碰到則扣一條生命值。
+2.	**障礙物**：碰到冰塊玩家暫停移動3秒
+3.	**道具**
+   －**因紐特人**：提供玩家關於MAC地址的線索
+   －**乖乖**：吃到乖乖道具可以增加一條生命值
+4. **通關條件**：找到正確的 MAC 地址，有許多選項，需要找到提示解碼
 
-第五關/第一層 (Physical Layer):  
-1.	躲避monster（教授）：在地圖上移動時玩家要躲避教授，被碰到會扣一條生命值。
-2.	障礙物：碰到學分玩家行動速度減慢
-3.	道具
-   1.阿信壽司：玩家遇到阿信壽司金幣增加 10 個
-   2.離散數學：玩家遇到離散數學時間增加 5 秒
-   3.乖乖：吃到乖乖道具可以增加一條生命值
-4. 通關條件：在時間限制內蒐集 100 個金幣交給宿管
+**第五關/第一層 (Physical Layer)**
+1.	**躲避monster（教授）**：在地圖上移動時玩家要躲避教授，被碰到會扣一條生命值。
+2.	**障礙物**：碰到學分玩家行動速度減慢
+3.	**道具**
+   －**阿信壽司**：玩家遇到阿信壽司金幣增加 10 個
+   －**離散數學**：玩家遇到離散數學時間增加 5 秒
+   －**乖乖**：吃到乖乖道具可以增加一條生命值
+4. **通關條件**：在時間限制內蒐集 100 個金幣交給宿管
     
 
 #### Level Details:
-第五層 (Application Layer):  
-Objective: Avoid the bear's DDOS attacks and shake the trees to find the HTTP response status code 200.  
-Obstacles: Swamps (slow down movement)  
-第四層 (Transport Layer):  
-Objective: Find the correct person to handshake with. Choosing the wrong person resets the current level.  
-Obstacles: Coral (slow down movement)  
-第三層 (Network Layer):  
-Objective: Find the correct school IP tunnel. Choosing the wrong one reduces 1 life.  
-Obstacles: Cacti (reduce 1 life)  
-第二層 (Link Layer):  
-Objective: Find the correct MAC Address among many options, using hints to decode the right one.  
-Obstacles: Ice blocks (pause for 3 seconds)  
-第一層 (Physical Layer):  
-Objective: Collect 100 coins within the time limit and give them to the dorm supervisor. Encountering Ashin Sushi increases coins by 10, and encountering a discrete event increases the time by 5 seconds.  
-Obstacles: Credits (slow down movement)  
+**Level 1/第五層 (Application Layer):**
+1. **Avoid Monster (Bear):** Players must dodge bear DDOS attacks while moving around the map; touching a bear
+costs one life.
+2. **Obstacles:** Moving through a swamp slows down the player.
+3. **Items:**
+  －**Tree:** Shaking a tree drops apples, each containing a random HTTP status code.
+  －**Guai Guai:** Consuming this item increases the player's life by one.
+4. **Goal:** Collect an apple with the status code 200 to proceed to the next level. If an
+incorrect apple is picked, the player returns to the start.
+ 
+**Level 2/第四層 (Transport Layer):**
+1. **Avoid Monsters (Sharks):** Players must dodge sharks; touching one costs a life.
+2. **Obstacles:** Contact with coral slows the player down.
+3. **Items:**
+  －**Shells:** Picking up shells drops clues, each pointing to the characteristics of the
+correct person.
+  －**Guai Guai:** Consuming this item increases the player's life by one.
+4. **Goal:**　Find and shake hands with the correct person. Incorrect choices restart the current level.
+
+
+**Level 3/第三層 (Network Layer):**  
+1. **Avoid Monsters (Scorpions):**　Players must dodge scorpions; touching one costs a life.
+2. **Obstacles:**　Touching a cactus costs the player one life.
+3. **Items:**
+  －**Coconuts:** Shaking a coconut tree drops coconuts containing clues to the correct
+school IP path.
+  －**Guai Guai:** Consuming this item increases the player's life by one.
+４. **Goal:** Find the correct school IP path. Incorrect choices cost one life. 
+
+**Level 4/第二層 (Link Layer):**
+1. **Avoid Monsters (Polar Bears):** Players must dodge polar bears; touching one costs a life.
+2. **Obstacles:** Touching ice blocks stops the player for 3 seconds.
+3. **Items:**
+  －**Inuit:** Provides clues about MAC addresses.
+  －**Guai Guai:** Consuming this item increases the player's life by one.
+4. **Goal:**　Find the correct MAC address among many options using the provided clues
+  
+**Level 5/第一層 (Physical Layer):**  
+1. **Avoid Monsters (Professors):**　Players must dodge professors; touching one costs a life.
+2. **Obstacles:**　Touching credits slows the player down.
+3. **Items:**
+  －**Sushi from Ah Xin:** Increases the player's coins by 10.
+  －**Discrete Mathematics:** Adds 5 seconds to the timer.
+  －**Guai Guai:** Consuming this item increases the player's life by one.
+4. **Goal:**　Collect 100 coins within the time limit and hand them to the dorm manager.
+
 
 #### 額外道具:
 1.計時器
