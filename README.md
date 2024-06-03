@@ -24,7 +24,7 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
 
 #### 關卡詳細資訊:
 **第一關/第五層 (Application Layer)**  
-1.	**躲避monster（熊）**：在地圖上移動時玩家要躲避熊的DDOS攻擊，被碰到會扣一條生命值  
+1.	**躲避monster（蜜蜂）**：在地圖上移動時玩家要躲避熊的DDOS攻擊，被碰到會扣一條生命值  
 3.	**障礙物**：經過沼澤地區玩家行動速度會減慢  
 4.	**道具**  
     －**樹**：玩家搖動樹時會掉落蘋果，每顆蘋果隨機包含不同的HTTP status code  
@@ -69,7 +69,7 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
 
 #### Level Details:  
 **Level 1/第五層 (Application Layer):**  
-1. **Avoid Monster (Bear):** Players must dodge bear DDOS attacks while moving around the map; touching a bear
+1. **Avoid Monster (Bee):** Players must dodge bear DDOS attacks while moving around the map; touching a bear
 costs one life.  
 2. **Obstacles:** Moving through a swamp slows down the player.  
 3. **Items:**  
@@ -126,15 +126,14 @@ school IP path.
 
 #### Additional Items:  
 1. **Timer**: Adds extra time to complete the current level.  
-2. **Invincibility**: Grants temporary immunity to all obstacles and enemies when eating more than 3 乖乖.
-  
+2. **Invincibility**: Grants temporary immunity to all obstacles and enemies when eating more than 3 乖乖.  
 3. **Magnet**: Attracts nearby coins automatically for a limited time.  
 4. **Angel**: Provides correct clues to help solve puzzles or find the right paths.  
 5. **Flying Device**: Allows the player to fly over obstacles and enemies for a short duration.  
 
 ## Usage
-操控上下左右按鍵移動小恐龍  
-Control the Google Dinosaur using the arrow keys to move up, down, left, and right.  
+操控上下左右，空白建或WASD按鍵移動小恐龍  
+Control the Google Dinosaur using the arrow keys, space or WASD to move up, down, left, and right.  
 
 ## References
 [無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)  
