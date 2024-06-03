@@ -59,7 +59,7 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
 1.	**躲避monster（教授）**：在地圖上移動時玩家要躲避教授，被碰到會扣一條生命值。   
 2.	**障礙物**：碰到學分玩家行動速度減慢   
 3.	**道具**  
-   - **金幣** : 增加15個金幣  
+   -**金幣** : 增加15個金幣  
    －**阿信壽司**：玩家遇到阿信壽司金幣增加 100 個  
    －**全家**：金幣減少 50 個，剩餘時間減少5秒  
    －**離散數學**：玩家遇到離散數學時間增加 10 秒    
@@ -110,8 +110,8 @@ school IP path.
 2. **Obstacles:**　Touching credits slows the player down.    
 3. **Items:**  
   －**Sushi from Ah Xin:** Increases the player's coins by 100.  
-  - **Family Mart:** Decreases the player's coins by 50 and minus 5 seconds to the timer.  
-  - **Coin:** Increases the player's coins by 15.  
+  -**Family Mart:** Decreases the player's coins by 50 and minus 5 seconds to the timer.  
+  -**Coin:** Increases the player's coins by 15.  
   －**Discrete Mathematics:** Adds 10 seconds to the timer.    
   －**Guai Guai:** Consuming this item increases the player's life by one.    
 4. **Goal:**　Collect 1000 coins within the time limit and hand them to the dorm manager.    
