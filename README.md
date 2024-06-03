@@ -24,7 +24,7 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
 
 #### 關卡詳細資訊:
 **第一關/第五層 (Application Layer)**  
-1.	**躲避monster（蜜蜂）**：在地圖上移動時玩家要躲避熊的DDOS攻擊，被碰到會扣一條生命值  
+1.	**躲避monster（蜜蜂）**：在地圖上移動時玩家要躲避蜜蜂蜜蜂的DDOS攻擊，被碰到會扣一條生命值  
 3.	**障礙物**：經過沼澤地區玩家行動速度會減慢  
 4.	**道具**  
     －**樹**：玩家搖動樹時會掉落蘋果，每顆蘋果隨機包含不同的HTTP status code  
@@ -69,7 +69,7 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
 
 #### Level Details:  
 **Level 1/第五層 (Application Layer):**  
-1. **Avoid Monster (Bee):** Players must dodge bear DDOS attacks while moving around the map; touching a bear
+1. **Avoid Monster (Bee):** Players must dodge bee DDOS attacks while moving around the map; touching a bear
 costs one life.  
 2. **Obstacles:** Moving through a swamp slows down the player.  
 3. **Items:**  
