@@ -49,22 +49,20 @@ Movement: Can move up, down, left, and right(controlled by the arrow keys)
 
 **第四關/第二層 (Link Layer)**  
 1.	**躲避monster（北極熊）**：在地圖上移動時玩家要躲避北極熊，被碰到則扣一條生命值。  
-2.	**障礙物**：碰到冰塊玩家暫停移動3秒  
-3.	**道具**  
+2.	**道具**  
    －**因紐特人**：提供玩家關於MAC地址的線索  
    －**乖乖**：吃到乖乖道具可以增加一條生命值  
-4. **通關條件**：找到正確的 MAC 地址，有許多選項，需要找到提示解碼  
+3. **通關條件**：找到正確的 MAC 地址，有許多選項，需要找到提示解碼  
 
 **第五關/第一層 (Physical Layer)**  
-1.	**躲避monster（教授）**：在地圖上移動時玩家要躲避教授，被碰到會扣一條生命值。   
-2.	**障礙物**：碰到學分玩家行動速度減慢   
-3.	**道具**  
+1.	**躲避monster（教授）**：在地圖上移動時玩家要躲避教授，被碰到會扣一條生命值。      
+2.	**道具**  
    -**金幣** : 增加15個金幣  
    －**阿信壽司**：玩家遇到阿信壽司金幣增加 100 個  
    －**全家**：金幣減少 50 個，剩餘時間減少5秒  
    －**離散數學**：玩家遇到離散數學時間增加 10 秒    
    －**乖乖**：吃到乖乖道具可以增加一條生命值    
-4. **通關條件**：在時間限制內蒐集 1000 個金幣交給宿管    
+3. **通關條件**：在時間限制內蒐集 1000 個金幣交給宿管    
     
 
 #### Level Details:  
@@ -99,22 +97,20 @@ school IP path.
 
 **Level 4/第二層 (Link Layer):**  
 1. **Avoid Monsters (Polar Bears):** Players must dodge polar bears; touching one costs a life.  
-2. **Obstacles:** Touching ice blocks stops the player for 3 seconds.  
-3. **Items:**  
+2. **Items:**  
   －**Inuit:** Provides clues about MAC addresses.  
   －**Guai Guai:** Consuming this item increases the player's life by one.  
-4. **Goal:**　Find the correct MAC address among many options using the provided clues
+3. **Goal:**　Find the correct MAC address among many options using the provided clues
 
 **Level 5/第一層 (Physical Layer):**    
-1. **Avoid Monsters (Professors):**　Players must dodge professors; touching one costs a life.   
-2. **Obstacles:**　Touching credits slows the player down.    
-3. **Items:**  
+1. **Avoid Monsters (Professors):**　Players must dodge professors; touching one costs a life.     
+2. **Items:**  
   －**Sushi from Ah Xin:** Increases the player's coins by 100.  
   -**Family Mart:** Decreases the player's coins by 50 and minus 5 seconds to the timer.  
   -**Coin:** Increases the player's coins by 15.  
   －**Discrete Mathematics:** Adds 10 seconds to the timer.    
   －**Guai Guai:** Consuming this item increases the player's life by one.    
-4. **Goal:**　Collect 1000 coins within the time limit and hand them to the dorm manager.    
+3. **Goal:**　Collect 1000 coins within the time limit and hand them to the dorm manager.    
 
 
 #### 額外道具:
