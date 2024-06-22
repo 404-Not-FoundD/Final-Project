@@ -131,6 +131,9 @@ school IP path.
 操控上下左右，空白建或WASD按鍵移動小恐龍  
 Control the Google Dinosaur using the arrow keys, space or WASD to move up, down, left, and right.  
 
+## Executable File
+[Download and execute this zip folder] (https://drive.google.com/file/d/1sZxDaAqttSsRh3mGVdTu4jASr19sZDDX/view?usp=sharing)
+
 ## References
 [無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)  
 [Sprite Renderer](https://blog.csdn.net/BeUniqueToYou/article/details/74779608)  
