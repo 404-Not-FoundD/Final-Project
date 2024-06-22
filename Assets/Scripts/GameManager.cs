@@ -4,35 +4,38 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance {get; private set;}
-    public float gameSpeed {get; private set;}
-    public float gameSpeedIncrease = 0.05f; 
-
     public bool gameOver {get; private set;}
+    public static GameManager Instance {get; private set;}
 
-    private DurationMode durationMode;
     public GameObject gameOverUI;
     public GameObject introScreen;
-
-    private Player player;
     public string thisScene;
+
+    private DurationMode durationMode;
+    private Player player;
+
+//<<<<<<< HEAD
+    public bool canClear;
+/*=======
+>>>>>>> 9c534b2e700fc7ae09bf0dc2ff7c9f100084f8ee*/
     
     void Awake()
     {
-        if(Instance == null) 
-        {
+        if (Instance == null) {
             Instance = this;
         }
-        else 
-        {
+        else {
             DestroyImmediate(gameObject);
         }
+//<<<<<<< HEAD
+        canClear = false;
+/*=======
+>>>>>>> 9c534b2e700fc7ae09bf0dc2ff7c9f100084f8ee*/
     }
 
     void OnDestroy()
     {
-        if(Instance == this) 
-        {
+        if (Instance == this) {
             Instance = null;
         }
     }
@@ -42,8 +45,7 @@ public class GameManager : MonoBehaviour
         durationMode = GetComponent<DurationMode>();
         player = FindFirstObjectByType<Player>();
 
-        durationMode.SetMode("IntroScreen", 3.0f, introScreen);
-        gameSpeed = 5f;
+        durationMode.SetMode("IntroScreen", 4.0f, introScreen);
     }
 
     public void RestartGame()
@@ -51,17 +53,27 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(thisScene);
     }
 
-    void Update()
-    {
-        gameSpeed += gameSpeedIncrease * Time.deltaTime;
-    }
-
     public void GameOver()
     {
         gameOver = true;
-        gameSpeed = 0f;
 
         gameOverUI.gameObject.SetActive(true);
         player.gameObject.SetActive(false);
+
+        // Update static data score by minus 5 whenever get game over
+        int score;
+        if(StaticData.scoreToKeep == null) score = -5;
+        else score = int.Parse(StaticData.scoreToKeep) - 5;
+
+        StaticData.scoreToKeep = score.ToString();
     }
+
+//<<<<<<< HEAD
+    public void Get200()
+    {
+        canClear = true;
+        Debug.Log(canClear);
+    }
+/*=======
+>>>>>>> 9c534b2e700fc7ae09bf0dc2ff7c9f100084f8ee*/
 }

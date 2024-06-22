@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimatedSprite : MonoBehaviour
 {
     public Sprite[] sprites;
+
     private SpriteRenderer spriteRenderer;
     private int frame;
     private float speed;
@@ -28,15 +29,13 @@ public class AnimatedSprite : MonoBehaviour
     {
         frame++;
 
-        if(frame >= sprites.Length)
-        {
+        if (frame >= sprites.Length) {
             frame = 0;
         }
-        if(frame >= 0 && frame < sprites.Length)
-        {
+        if (frame >= 0 && frame < sprites.Length) {
             spriteRenderer.sprite = sprites[frame];
         }
 
-        Invoke(nameof(Animate), 1f / GameManager.Instance.gameSpeed);
+        Invoke(nameof(Animate), 1f / 5);
     }
 }

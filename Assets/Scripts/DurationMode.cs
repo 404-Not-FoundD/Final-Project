@@ -15,14 +15,12 @@ public class DurationMode : MonoBehaviour
         modeDuration = duration;
         objectText = text;
 
-        if(objectText != null)
-        {
+        if (objectText != null) {
             objectText.gameObject.SetActive(true);
         }
 
         // Stop any existing coroutine if it is running
-        if(modeCoroutine != null)
-        {
+        if (modeCoroutine != null) {
             StopCoroutine(modeCoroutine);
         }
 
@@ -30,44 +28,26 @@ public class DurationMode : MonoBehaviour
         modeCoroutine = StartCoroutine(ModeDurationCoroutine());
     }
 
-    /*
-    private IEnumerator ModeDurationCoroutine()
-    {
-        yield return new WaitForSeconds(modeDuration);
-
-        if(objectText != null)
-        {
-            objectText.gameObject.SetActive(false);
-        }
-
-        modeString = null;
-        modeCoroutine = null;
-    }
-    */
-
     private IEnumerator ModeDurationCoroutine()
     {
         float elapsed = 0f;
 
-        while(elapsed < modeDuration)
-        {
-            if(GameManager.Instance.gameOver)
-            {
-                break;
-            }
+        while (elapsed < modeDuration) {
+            if (GameManager.Instance.gameOver) break;
 
             elapsed += Time.deltaTime;
             yield return null; // Wait for the next frame
         }
 
-        if(objectText != null)
-        {
+        if (objectText != null) {
             objectText.gameObject.SetActive(false);
         }
 
         modeString = null;
         modeCoroutine = null;
     }
+
+    // Functions that can be called by other script
     public bool IsInvincible
     {
         get {return modeString == "InvincibleMode";}
@@ -76,5 +56,10 @@ public class DurationMode : MonoBehaviour
     public bool IsSlow
     {
         get {return modeString == "SlowMode";}
+    }
+
+    public bool IsMagnet
+    {
+        get {return modeString == "MagneticMode";}
     }
 }

@@ -9,13 +9,28 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 926758758e913794199e34758cdfbccf
+  - enabled: 1
+    path: Assets/Scenes/NoInternet.unity
+    guid: 5519767bee07ba047adaac7a488df19d
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
-    guid: 41482d1ffd030ac4aa18190da7964100
+    guid: ae50cc9346b98e1468d0f390656e29cf
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 12460de372f25634eb7c747b3ddcd509
   - enabled: 1
     path: Assets/Scenes/Level3.unity
-    guid: a9f1dc01d1f6b5744abed304dceef279
+    guid: 72557fa449972aa4b9d085cb91ee14d2
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 83dd84edd591498448e586900995556b
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 5017c2da03e471545b8025a0f1af92e6
+  - enabled: 1
+    path: Assets/Scenes/LastScene.unity
+    guid: f4bfaca46f202e74c91ce499206ad6a4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

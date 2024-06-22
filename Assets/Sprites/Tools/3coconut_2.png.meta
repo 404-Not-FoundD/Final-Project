@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3coconut_2_0: -4801594495214605229
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,13 +10,11 @@ public class Instruction : MonoBehaviour
         durationMode = GetComponent<DurationMode>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        {
-            {
-                durationMode.SetMode("Instructions", 2.0f, instructText);
-            }
+        // If player collides, get instruction screen
+        if (other.CompareTag("Player")) {
+            durationMode.SetMode("Instructions", 2.0f, instructText);
         }
     }
 }

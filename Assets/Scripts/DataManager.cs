@@ -6,34 +6,36 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager InstanceData {get; private set;}
 
-    public int hp, score, guaiGuai;
-    public float time;
-
     public Text scoreText, timeText;
     public GameObject hpBar, symbol;
+    public int hp, score, guaiGuai, hiScore;
+    public float limit_time, time, prevTime;
+
+    private GameObject game_manager;
+    private GameManager game_manager_script;
 
     void Awake()
     {
-        if(InstanceData == null) 
-        {
+        game_manager = GameObject.Find("GameManager");
+
+        if (InstanceData == null) {
             InstanceData = this;
         }
-        else 
-        {
+        else {
             DestroyImmediate(gameObject);
         }
     }
 
     void OnDestroy()
     {
-        if(InstanceData == this) 
-        {
+        if (InstanceData == this) {
             InstanceData = null;
         }
     }
 
     void Start()
     {
+        game_manager_script = game_manager.GetComponent<GameManager>();
         UpdateDataFromStatic();
         UpdateScoreText();
         UpdateTimeText();
@@ -42,46 +44,79 @@ public class DataManager : MonoBehaviour
 
     void Update()
     {
-        if(!GameManager.Instance.gameOver)
-        {
-            if(hp == 0)
-            {
-                // manually update static data be score minus 5
-                if(StaticData.scoreToKeep == null)
-                {
-                    score = -5;
+        if (!GameManager.Instance.gameOver) {
+            // If no remaining life, game over
+            if (hp == 0) GameManager.Instance.GameOver();
+
+            // If exceeds time limit, game over (Level 5)
+            if (game_manager_script.thisScene == "Level5") {
+                time -= Time.deltaTime;
+                if (time <= 0) {
+                    time = 0;
+                    GameManager.Instance.GameOver();
                 }
-                else
-                {
-                    score = int.Parse(StaticData.scoreToKeep) - 5;
+                else if (time <= 10) {
+                    timeText.color = Color.red;
                 }
-                StaticData.scoreToKeep = score.ToString();
-                
-                GameManager.Instance.GameOver();
+                else {
+                    timeText.color = Color.white;
+                }
             }
-            time += Time.deltaTime;
+            else {
+                timeText.color = Color.white;
+                time += Time.deltaTime;
+            }
+
             UpdateTimeText();
-        }   
+        }
     }
 
     void UpdateDataFromStatic()
     {
+        // Initialize every data to default value
         guaiGuai = score = 0;
-        time = 0f;
         hp = 7;
+        time = prevTime = 0f;
 
-        if(StaticData.scoreToKeep != null)
-        {
+        // change data if staticData script has value stored
+        if (StaticData.scoreToKeep != null) {
             score = int.Parse(StaticData.scoreToKeep);
         }
 
-        if(StaticData.timeToKeep != null)
-        {
-            time = int.Parse(StaticData.timeToKeep); 
-            hp = int.Parse(StaticData.lifeToKeep); 
-        } 
+        if (StaticData.timeToKeep != null) {
+            time = int.Parse(StaticData.timeToKeep);
+            hp = int.Parse(StaticData.lifeToKeep);
+        }
+
+        // Initiate time (Level 5)
+        if (game_manager_script.thisScene == "Level5") {
+            prevTime = time;
+            time = limit_time;
+        }  
     }
 
+    void UpdateScoreText()
+    {
+        // If score is negative, '+'symbol won't show
+        if (score < 0) symbol.gameObject.SetActive(false);
+        else symbol.gameObject.SetActive(true);
+
+        scoreText.text = score.ToString("D2");
+    }
+
+    void UpdateTimeText()
+    {
+        timeText.text = Mathf.FloorToInt(time).ToString("D3");
+    }
+
+    void UpdateHpBar()
+    {
+        for (int i = 0; i < hpBar.transform.childCount; i++) {
+            hpBar.transform.GetChild(i).gameObject.SetActive(i < hp);
+        }
+    }
+
+    // Functions that can be called by other script
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
@@ -95,33 +130,7 @@ public class DataManager : MonoBehaviour
         UpdateHpBar();
     }
 
-    void UpdateScoreText()
-    {
-        if(score < 0)
-        {
-            symbol.gameObject.SetActive(false);
-        }
-        else
-        {
-            symbol.gameObject.SetActive(true);
-        }
-        scoreText.text = score.ToString("D2");
-    }
-
-    void UpdateTimeText()
-    {
-        timeText.text = Mathf.FloorToInt(time).ToString("D3");
-    }
-
-    void UpdateHpBar()
-    {
-        for(int i = 0; i < hpBar.transform.childCount; i++)
-        {
-            hpBar.transform.GetChild(i).gameObject.SetActive(i < hp);
-        }
-    }
-
-    public int GetScore() 
+    public int GetScore()
     {
         return score;
     }
@@ -131,7 +140,7 @@ public class DataManager : MonoBehaviour
         return Mathf.FloorToInt(time);
     }
 
-    public int GetHp() 
+    public int GetHp()
     {
         return hp;
     }
@@ -142,15 +151,19 @@ public class DataManager : MonoBehaviour
         return guaiGuai;
     }
 
-//////////////////////// best score can only get when end game (LVL5)>>>>>(pending to update!!)
-/*
     public int GetHiScore()
     {
-        if(score < hiScore)
-        {
-            return score;
+        float hiScoreFloat = score * 0.5f - prevTime * 0.2f + time * 0.1f;
+        int hiScoreNow = Mathf.FloorToInt(hiScoreFloat);
+
+        if (StaticData.hiScoreToKeep != null) {
+            hiScore = int.Parse(StaticData.hiScoreToKeep);
+            if (hiScoreNow > hiScore) hiScore = hiScoreNow;
         }
+        else {
+            hiScore = hiScoreNow;
+        }
+
         return hiScore;
     }
-*/
 }

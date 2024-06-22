@@ -9,16 +9,16 @@ public class MainSceneGameManager : MonoBehaviour
     
     public void Start()
     {
-        /* *** WHAT HISCORE DO WE NEED TO KEEP? ***
-        // hiScore = int.Parse(StaticData.hiScoreToKeep);
-        */
+        if (StaticData.hiScoreToKeep != null) {
+            hiScore = int.Parse(StaticData.hiScoreToKeep);
+        }
         
-        hiScoreText.text = hiScore.ToString("D3");
+        hiScoreText.text = hiScore.ToString("D5");
     }
 
-    public void StartGame() // game start button
+    public void StartGame() // Game start button
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Login");
     }
 
     public void EndGame()

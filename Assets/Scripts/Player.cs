@@ -2,76 +2,95 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Rigidbody2D rb;
     public float moveSpeed = 3f;
-    public float invincibleSpeedMultiplier = 2f;
-    public float decreaseSpeedMultiplier = 0.5f;
+    public float jumpForce = 6f;
+    private float speedMultiplier = 1f;
+    private float invincibleSpeedMultiplier = 2f;
+    private float decreaseSpeedMultiplier = 0.5f;
+    
+    public int jumpCount; 
+    public int maxJumps = 1; 
+    public Transform ground_check;
+    public LayerMask groundLayer; // LayerMask to specify what count as ground
+    public AudioSource jump_music;
 
-    public float gravity = 9.81f * 2f;
-    public float jumpForce = 8f;
-
-    private bool prestate = true; //0 L 1 R
-
-    private CharacterController character;
     private DurationMode durationMode;
-    private Vector3 moveDirection = Vector3.zero;
+    private GameManager game_manager_script;
+    private GameObject game_manager;
+    private bool isGrounded;
+    
+
+    void Awake()
+    {
+        game_manager = GameObject.Find("GameManager");
+    }
 
     void Start()
     {
-        character = GetComponent<CharacterController>();
         durationMode = GetComponent<DurationMode>();
+        game_manager_script = game_manager.GetComponent<GameManager>();
+        rb = GetComponent<Rigidbody2D>();
 
-        character.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+        transform.localScale = new Vector3(1, 1, 1); // Set the scale of player
+        jump_music.playOnAwake = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        HandleMovement();
-        HandleJump();
+        movement();
+        fall_gameOver();
+        isGrounded = Physics2D.OverlapCircle(ground_check.position, 0.2f, groundLayer);
     }
 
-    void HandleMovement()
+    void Update() 
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-
-        // facing of the player (L / R)
-        if(horizontalInput < 0 && prestate)
-        {
-            prestate = false;
-        }
-        else if(horizontalInput > 0 && !prestate)
-        {
-            prestate = true;
-        }
-        if(!prestate) transform.localScale = new Vector3(-1, 1, 1);
-        else transform.localScale = new Vector3(1, 1, 1);
-
-        // x-direction movement
-        moveDirection.x = horizontalInput * moveSpeed;
-
-        // player to be grounded
-        if(!character.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
-
-        // movement speed change
-        if(durationMode.IsInvincible)
-        {
-            moveDirection.x *= invincibleSpeedMultiplier;
-        }
-        else if(durationMode.IsSlow)
-        {
-            moveDirection.x *= decreaseSpeedMultiplier;
-        }
-
-        character.Move(moveDirection * Time.deltaTime);
+        jump();
     }
 
-    private void HandleJump()
+    void movement()
     {
-        if(character.isGrounded && (Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.UpArrow)))
-        {
-            moveDirection.y = jumpForce;
+        float horizontal_move = Input.GetAxis("Horizontal");
+        
+        // Check if the player is grounded
+        var v = rb.velocity;
+        v.x = 0;
+        rb.velocity = v;
+        
+        if (horizontal_move != 0) {
+            // Movement speed change
+            if (durationMode.IsInvincible) speedMultiplier = invincibleSpeedMultiplier;
+            else if (durationMode.IsSlow) speedMultiplier = decreaseSpeedMultiplier;
+            else speedMultiplier = 1f;
+
+            // Set player's velocity
+            rb.velocity = new Vector2(horizontal_move * moveSpeed * speedMultiplier, rb.velocity.y);
+
+            // Change player's direction visually
+            transform.localScale = new Vector3(Mathf.Sign(horizontal_move), 1, 1);
+        } 
+    }
+
+    void jump()
+    {
+        if (isGrounded) {
+            jumpCount = 0; // Reset jump count when grounded
+        }
+        if ((Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && jumpCount < maxJumps) {
+            rb.velocity = Vector2.up * jumpForce;
+            jumpCount++;
+            jump_music.Play();
+        }
+        if ((Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && jumpCount == maxJumps && isGrounded) {
+            rb.velocity = Vector2.up * jumpForce;
+            jump_music.Play();
+        }
+    }
+
+    void fall_gameOver()
+    {
+        if (transform.position.y < -20f) {
+            game_manager_script.GameOver();
         }
     }
 }
