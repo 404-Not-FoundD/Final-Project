@@ -133,7 +133,7 @@ school IP path.
 Press the spacebar to start. Then control the small dinosaur using the arrow keys (up, down, left, right), the spacebar (which allows multiple jumps), or the WASD keys to move.  
 
 ## Executable File
-[Download and execute this zip folder]([https://drive.google.com/file/d/1H9Lfk4mBOspz4fu91dX5UDaTZt2enfva/view?usp=sharing](https://drive.google.com/file/d/1H9Lfk4mBOspz4fu91dX5UDaTZt2enfva/view?usp=sharing))
+[Download and execute this zip folder]([https://drive.google.com/file/d/1H9Lfk4mBOspz4fu91dX5UDaTZt2enfva/view?usp=sharing](https://drive.google.com/file/d/1H9Lfk4mBOspz4fu91dX5UDaTZt2enfva/view?usp=sharing)
 
 ## References
 [無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)  
