@@ -7,11 +7,11 @@ Our game draws inspiration from "Mario" and "Google Dinosaur." Using Unity, we f
 The game begins with a Dormnet network disconnection. The player must collect clues to find the correct IP address and gather objects for each layer of the TCP/IP model, progressing through 5 levels to reconnect the network.  
 
 ## Team Members
-- 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示，額外道具，整合大師
-- 陳湘昀 412410013(@sony0505): 地圖生成，部分道具，整合，debug大師
-- 莊昀潔 412410020(@Jayechuang): terminal大師，主要道具
+- 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示(UI)，額外道具
+- 陳湘昀 412410013(@sony0505): 檔案儲存，鏡頭控制，地圖生成，部分道具，整合，debug
+- 莊昀潔 412410020(@Jayechuang): terminal，暫停系統，部分繪圖，主要道具
 - 黃煜庭 412410051(@ccuhyt): monster，初始登入介面，部分地圖生成，部分繪圖
-- 余沛穎 412410073(@YuPatty): player，分數，血量，BGM+音效，部分地圖生成，額外道具，繪圖大師，報告+README
+- 余沛穎 412410073(@YuPatty): player，分數，血量，BGM+音效，部分地圖生成，額外道具，繪圖，報告+README
 
 ## Project Description
 玩家(小恐龍)一開始有7條命，碰到怪獸減1條命，遇到乖乖增1條命;可上下左右移動  
@@ -117,16 +117,15 @@ school IP path.
 1.計時器
 2.無敵狀態
 3.磁鐵
-4.天使
-5.飛行器
+4.暫停MENU
 
 #### Additional Items:  
 1. **Timer**: Adds extra time to complete the current level.  
 2. **Invincibility**: Grants temporary immunity to all obstacles and enemies when eating more than 3 乖乖.  
 3. **Magnet**: Attracts nearby coins automatically for a limited time.  
-4. **Angel**: Provides correct clues to help solve puzzles or find the right paths.  
-5. **Flying Device**: Allows the player to fly over obstacles and enemies for a short duration.  
-
+4. **Pasuing menu**: When the pause button is pressed, this system can pause and display five items:  
+(1)Continue Game  (2)Restart Game  (3)Team Introduction  (4)How to Play  (5)Exit Game  
+ 
 ## Usage
 操控上下左右，空白建或WASD按鍵移動小恐龍  
 Control the Google Dinosaur using the arrow keys, space or WASD to move up, down, left, and right.  
