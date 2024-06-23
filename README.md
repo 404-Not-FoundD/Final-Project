@@ -6,6 +6,8 @@
 Our game draws inspiration from "Mario" and "Google Dinosaur." Using Unity, we feature the Google Dinosaur as the main character.
 The game begins with a Dormnet network disconnection. The player must collect clues to find the correct IP address and gather objects for each layer of the TCP/IP model, progressing through 5 levels to reconnect the network.  
 
+[Overview Video](https://drive.google.com/file/d/1VS9lwYDGj4GksnwKxEKPgaC81aujIFuZ/view?usp=sharing)
+
 ## Team Members
 - 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示(UI)，額外道具
 - 陳湘昀 412410013(@sony0505): 檔案儲存，鏡頭控制，地圖生成，整合，debug
