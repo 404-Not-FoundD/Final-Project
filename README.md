@@ -127,6 +127,10 @@ school IP path.
 4. **Pasuing menu**: When the pause button is pressed, this system can pause and display five items:  
 (1)Continue Game  (2)Restart Game  (3)Team Introduction  (4)How to Play  (5)Exit Game
 5. **Store player information in memory**: When entering the login screen, the player inputs their information, and the computer simultaneously saves the information.  
+
+https://github.com/404-Not-FoundD/Final-Project/assets/158292801/1cc0af09-699b-4656-a520-d80d2099b900
+
+
  
 ## Usage
 按下空白建開始。之後操控上下左右，空白建(可以連跳)或WASD按鍵移動小恐龍    
