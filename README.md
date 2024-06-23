@@ -8,7 +8,7 @@ The game begins with a Dormnet network disconnection. The player must collect cl
 
 ## Team Members
 - 劉靖媛 412410003(@jyliew1912): 遊戲畫面顯示(UI)，額外道具
-- 陳湘昀 412410013(@sony0505): 檔案儲存，鏡頭控制，地圖生成，部分道具，整合，debug
+- 陳湘昀 412410013(@sony0505): 檔案儲存，鏡頭控制，地圖生成，整合，debug
 - 莊昀潔 412410020(@Jayechuang): terminal，暫停系統，部分繪圖，主要道具
 - 黃煜庭 412410051(@ccuhyt): monster，初始登入介面，部分地圖生成，部分繪圖
 - 余沛穎 412410073(@YuPatty): player，分數，血量，BGM+音效，部分地圖生成，額外道具，繪圖，報告+README
