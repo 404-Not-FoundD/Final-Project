@@ -129,8 +129,8 @@ school IP path.
 5. **Store player information in memory**: When entering the login screen, the player inputs their information, and the computer simultaneously saves the information.  
  
 ## Usage
-操控上下左右，空白建或WASD按鍵移動小恐龍  
-Control the Google Dinosaur using the arrow keys, space or WASD to move up, down, left, and right.  
+按下空白建開始。之後操控上下左右，空白建(可以連跳)或WASD按鍵移動小恐龍    
+Press the spacebar to start. Then control the small dinosaur using the arrow keys (up, down, left, right), the spacebar (which allows multiple jumps), or the WASD keys to move.  
 
 ## Executable File
 [Download and execute this zip folder](https://drive.google.com/file/d/1H9Lfk4mBOspz4fu91dX5UDaTZt2enfva/view?usp=sharing)
