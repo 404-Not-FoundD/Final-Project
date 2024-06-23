@@ -116,14 +116,14 @@ school IP path.
 #### 額外道具:
 1.計時器
 2.無敵狀態
-3.磁鐵  
+3.磁鐵
 4.暫停MENU
 
 #### Additional Items:  
 1. **Timer**: Adds extra time to complete the current level.  
 2. **Invincibility**: Grants temporary immunity to all obstacles and enemies when eating more than 3 乖乖.  
 3. **Magnet**: Attracts nearby coins automatically for a limited time.  
-4. **Pasuing menu**: When the pause button is pressed, this system can pause and display five items:
+4. **Pasuing menu**: When the pause button is pressed, this system can pause and display five items:  
 (1)Continue Game  (2)Restart Game  (3)Team Introduction  (4)How to Play  (5)Exit Game  
  
 ## Usage
