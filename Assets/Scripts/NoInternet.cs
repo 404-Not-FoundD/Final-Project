@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,7 @@ public class NoInternet : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) {
             jump_music.Play();
             StartCoroutine(Jump(transform.localPosition, transform.localPosition + Vector3.up * 0.5f));
+            
         }
         
     }
@@ -24,9 +26,9 @@ public class NoInternet : MonoBehaviour
     {
         float elapsed = 0f;
         float duration = 0.125f;
-
         // Continue the loop until the elapsed time reaches the duration (0.125s)
         while (elapsed < duration) {
+        
             float t = elapsed / duration;
 
             transform.localPosition = Vector3.Lerp(from, to, t);
@@ -34,8 +36,10 @@ public class NoInternet : MonoBehaviour
 
             yield return null;
         }
+        
 
         transform.localPosition = to;
         SceneManager.LoadScene("Level1");
+
     }  
 }
