@@ -128,10 +128,8 @@ school IP path.
 (1)Continue Game  (2)Restart Game  (3)Team Introduction  (4)How to Play  (5)Exit Game
 5. **Store player information in memory**: When entering the login screen, the player inputs their information, and the computer simultaneously saves the information.  
 
-https://github.com/404-Not-FoundD/Final-Project/assets/158292801/1cc0af09-699b-4656-a520-d80d2099b900
+https://github.com/404-Not-FoundD/Final-Project/assets/158292801/05343da7-5fbb-46f4-9767-6411b5a7e2e5  
 
-
- 
 ## Usage
 按下空白建開始。之後操控上下左右，空白建(可以連跳)或WASD按鍵移動小恐龍    
 Press the spacebar to start. Then control the small dinosaur using the arrow keys (up, down, left, right), the spacebar (which allows multiple jumps), or the WASD keys to move.  
