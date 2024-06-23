@@ -117,7 +117,7 @@ school IP path.
 1.計時器
 2.無敵狀態
 3.磁鐵
-4.暫停MENU  
+4.暫停MENU
 5.記憶存儲玩家資訊
 
 #### Additional Items:  
