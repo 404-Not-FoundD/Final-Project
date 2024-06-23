@@ -124,7 +124,8 @@ school IP path.
 2. **Invincibility**: Grants temporary immunity to all obstacles and enemies when eating more than 3 乖乖.  
 3. **Magnet**: Attracts nearby coins automatically for a limited time.  
 4. **Pasuing menu**: When the pause button is pressed, this system can pause and display five items:  
-(1)Continue Game  (2)Restart Game  (3)Team Introduction  (4)How to Play  (5)Exit Game  
+(1)Continue Game  (2)Restart Game  (3)Team Introduction  (4)How to Play  (5)Exit Game    
+
  
 ## Usage
 操控上下左右，空白建或WASD按鍵移動小恐龍  
