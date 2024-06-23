@@ -133,7 +133,7 @@ school IP path.
 Control the Google Dinosaur using the arrow keys, space or WASD to move up, down, left, and right.  
 
 ## Executable File
-[Download and execute this zip folder](https://drive.google.com/file/d/1sZxDaAqttSsRh3mGVdTu4jASr19sZDDX/view?usp=sharing)
+[Download and execute this zip folder](https://drive.google.com/file/d/1H9Lfk4mBOspz4fu91dX5UDaTZt2enfva/view?usp=sharing)
 
 ## References
 [無法穿透](https://blog.csdn.net/assassinsshadow/article/details/81301556)  
